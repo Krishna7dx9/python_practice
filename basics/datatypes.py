@@ -58,13 +58,12 @@ print(num_int, num_str, num_float, num_string_again)
 
 your_name = "Kris"
 your_age = 41
-your_marks = 69
+your_marks = 69.0
 are_you_human = False
-your_favourite_numbers = []
+your_favourite_numbers = [0,5,6]
 tuple_of_3_random_values = (5,6,3)
 dictionary = {"name" : "Kris", "Age" : 45}
 set_of_5_unique = {2,5,6,3,9}
-
 
 # Problem 2:
 # Convert:
@@ -73,6 +72,9 @@ set_of_5_unique = {2,5,6,3,9}
 # - your name (str) → list of characters
 # Example: "kris" → ['k', 'r', 'i', 's']
 
+your_age_float = float(your_age)
+your_marks_int = int(your_marks)
+your_name_list = list(your_name)
 
 # Problem 3:
 # Print:
@@ -80,13 +82,32 @@ set_of_5_unique = {2,5,6,3,9}
 # - length of your name
 # - max, min of your favorite numbers list
 
+# type of variables
+print(type(your_name), type(your_age), type(your_marks), type(are_you_human), type(your_favourite_numbers), type(tuple_of_3_random_values), type(dictionary), type(set_of_5_unique))
+
+# length of name
+print(len(your_name))
+
+# Max, min from list
+print(max(your_favourite_numbers))
+print(min(your_favourite_numbers))
 
 # Problem 4:
 # Create a dictionary of:
 #   "name", "age", "is_student", "skills"
 # where skills is a list like ["python", "dsa"]
 
+dict = {
+    "name" : "Kabir",
+    "age" : 19,
+    "isStudent" : True,
+    "skills" : ["python", "dsa", "Flutter"] }
+
 # Then print:
 # - all keys
 # - all values
 # - the value of "skills"
+
+print(dict.keys())          # all keys
+print(dict.values())        # all values
+print(dict["skills"])       # value of key "skills"
