@@ -111,3 +111,83 @@ dict = {
 print(dict.keys())          # all keys
 print(dict.values())        # all values
 print(dict["skills"])       # value of key "skills"
+
+# Problem 5:
+# Create variables of all basic datatypes:
+# - an integer
+# - a float
+# - a boolean
+# - a string
+# Print each variable and also print its datatype using type()
+
+# Write code here
+
+num = 4
+percent = 96.30
+is_King = True
+your_name = "Kris"
+
+print(f"{num} : {type(num)}")
+print(f"{percent} : {type(percent)}")
+print(f"{is_King} : {type(is_King)}")
+print(f"{your_name} : {type(your_name)}")
+
+# Problem 6:
+# Create a list named data_list containing:
+# - an int, a float, a string, and a boolean
+# Print:
+# - the full list
+# - the datatype of the list
+# - datatype of each element inside it
+
+# Write code here
+
+data_list = [1, 12.3, "Kris", True]
+
+print(data_list)
+print(type(data_list))
+print(type(data_list[0]), type(data_list[1]), type(data_list[2]), type(data_list[3]))
+
+# Problem 7:
+# Create a tuple named user_info with:
+# - your name
+# - your age
+# - your city
+# Print:
+# - the full tuple
+# - the datatype of the tuple
+
+# Write code here
+
+user_info = ("Kris", "18", "Ahmedabad")
+
+print(user_info)
+print(type(user_info))
+
+# Problem 8:
+# Create a dictionary named student_record:
+# Keys: "name", "age", "score"
+# Values: any name, any age, any score
+# Print the dictionary and also print value of "score"
+
+# Write code here
+
+
+
+# Problem 9:
+# Create a set named unique_nums containing at least 5 numbers
+# (make sure at least one number tries to repeat)
+# Print the set and explain in a comment what happened to duplicates.
+
+# Write code here
+
+
+
+# Problem 10:
+# Given these variables:
+# a = "10"
+# b = 20
+# Convert a so you can add it with b.
+# Print result and datatype before & after conversion.
+
+# Write code here

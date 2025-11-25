@@ -148,8 +148,6 @@ while n < len(nums_p3):
 else:
     n += 1
 
-
-
 # ------------------------------------------------------------
 # Problem 4:
 # Given a list:
@@ -161,7 +159,10 @@ else:
 arr_p4 = [9, 2, 14, 1, 5, 8]
 # Your solution here
 
-
+arr_p4.sort()
+arr_p4.reverse()
+print(arr_p4.sort())
+print(arr_p4.reverse())
 
 # ------------------------------------------------------------
 # Problem 5:
@@ -175,6 +176,8 @@ arr_p4 = [9, 2, 14, 1, 5, 8]
 # Example input: 5 10 2 8
 # Your solution here
 
+nums_0 = input("Enter List of Numbers:"  )
+nums_list = list(nums_0)
 
 
 # ------------------------------------------------------------
@@ -184,9 +187,11 @@ arr_p4 = [9, 2, 14, 1, 5, 8]
 # ------------------------------------------------------------
 
 list_p6 = [2, 4, 6, 8, 10]
+print(list_p6)
 # Your solution here
 
-
+squared_list_p6 = [n * n for n in list_p6]
+print(squared_list_p6)
 
 # ------------------------------------------------------------
 # Problem 7:
@@ -198,7 +203,6 @@ list_with_dupes_p7 = [1, 3, 3, 5, 1, 7, 7, 2]
 # Your solution here
 
 
-
 # ------------------------------------------------------------
 # Problem 8:
 # Given a list of numbers, copy it CORRECTLY (not reference copy).
@@ -207,3 +211,5 @@ list_with_dupes_p7 = [1, 3, 3, 5, 1, 7, 7, 2]
 
 orig_list_p8 = [10, 20, 30]
 # Your solution here
+
+orig_list_p8_copy = orig_list_p8[:]
