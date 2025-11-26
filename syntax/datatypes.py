@@ -172,7 +172,9 @@ print(type(user_info))
 
 # Write code here
 
+student_record = {"name": "Kris", "age": 19, "score": 96}
 
+print(student_record, student_record["score"])
 
 # Problem 9:
 # Create a set named unique_nums containing at least 5 numbers
@@ -181,13 +183,32 @@ print(type(user_info))
 
 # Write code here
 
+unique_nums = {1, 2, 3, 4, 1}
 
+print(unique_nums)
+
+# The set in python is designed to take unique values, when we explicitly put non-unique values,
+# it will not throw the error but it will remove the duplicates.
 
 # Problem 10:
-# Given these variables:
-# a = "10"
-# b = 20
+# Create these variables:
+# a_1 = "10"
+# b_1 = 20
 # Convert a so you can add it with b.
 # Print result and datatype before & after conversion.
 
 # Write code here
+
+a_1 = "10"
+b_1 = 20
+
+print(type(a_1))
+print(type(b_1))
+
+a_1 = int(a_1)
+
+print(type(a_1))
+
+sum_a1_b1 = a_1 + b_1
+
+print(sum_a1_b1)
