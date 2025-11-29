@@ -46,7 +46,7 @@ while count <= 5:
 # While loop example: stop when value becomes 10
 
 value = 1
-while value !=10:
+while value != 10:
     print(value)
     value += 1
 
@@ -77,6 +77,56 @@ for t in range(3):
 for a in range(2):
     for b in range(3):
         print(a, b)
+
+# Exercise 1 — Square of Numbers
+# Print:
+# 12345
+# 12345
+# 12345
+# 12345
+# 12345
+#
+# Write your code below
+# ------------------------------------------------------------
+
+for i in range(1, 6):
+    for l in range(1, 6):
+        print(l, end = "")
+    print()
+
+# ------------------------------------------------------------
+# Exercise 2 — Right Triangle of Numbers
+# Print:
+# 1
+# 12
+# 123
+# 1234
+# 12345
+#
+# Write your code below
+# ------------------------------------------------------------
+
+for i in range(5):
+    for l in range(i + 1):
+        print(l + 1, end = "")
+    print()
+
+# ------------------------------------------------------------
+# Exercise 3 — Reverse Triangle of Stars
+# Print:
+# *****
+# ****
+# ***
+# **
+# *
+#
+# Write your code below
+# ------------------------------------------------------------
+
+for i in range(5):
+    for l in range(5 - i):
+        print("*", end = "")
+    print()
 
 # ============================================================
 # PRACTICE PROBLEMS — LOOPS
@@ -152,4 +202,188 @@ while h <= 50:
     sum_result += h
     h += 1
 
-print(sum_result)    
+print(sum_result)
+
+# 🔹 Problem 7 — Multiples Sum
+# Calculate and print the sum of all multiples of 3 between 1 and 100.
+# Use a loop and store result in sum_multiples
+
+sum_multiples = 0
+
+# Write your code below
+
+sum_multiples = 0
+for i in range(1, 100):
+    if i % 3 == 0:
+        sum_multiples += i
+print(f"Sum of multiples of 3 between 1 and 100: {sum_multiples}")
+
+# 🔹 Problem 8 — Character Counter
+# Given string text = "programming", count and print how many times 'g' appears.
+# Use a loop and a counter variable: g_count
+
+text = "programming"
+g_count = 0
+
+# Write your code below
+
+for x in text:
+    if "g" == x:
+        g_count += 1
+print(f"Count: {g_count}")    
+
+# 🔹 Problem 9 — First Negative Finder
+# Given list nums = [4, -3, 7, -1, 2, -8], 
+# print the first negative number and stop the loop using break
+
+nums = [4, -3, 7, -1, 2, -8]
+
+# Write your code below
+
+for x in nums:
+    if x < 0:
+        print(x)
+        break
+
+# 🔹 Problem 10 — Pattern Printing
+# Print a right-angled triangle of stars with 5 rows.
+# Example:
+# *
+# **
+# ***
+# ****
+# *****
+# Use nested loops
+
+# Write your code below
+
+for row in range(6):
+    for col in range(row):
+        print("*", end = "")
+    print()
+
+# 🔹 Problem 11 — Square Pattern
+# Print a 5x5 square of stars.
+# *****
+# *****
+# *****
+# *****
+# *****
+
+# Write your code below
+
+for row in range(5):
+    for col in range(5):
+        print("*", end = "")
+    print()
+
+# 🔹 Problem 12 — Increasing Number Triangle
+# 1
+# 12
+# 123
+# 1234
+# 12345
+
+# Write your code below
+
+for row in range(6):
+    for col in range(1, row + 1):
+        print(col, end = "")
+    print()
+
+# 🔹 Problem 13 — Decreasing Star Triangle
+# *****
+# ****
+# ***
+# **
+# *
+
+# Write your code below
+
+for row in range(5, 0, -1):
+    for col in range(row):
+        print("*", end = "")
+    print()
+
+# 🔹 Problem 14 — Left-Aligned Pyramid
+#     *
+#    **
+#   ***
+#  ****
+# *****
+
+# Write your code below
+
+for row in range(5):
+    for col in range(row):
+        print("*", end ="")
+    print()
+
+# 🔹 Problem 15 — Right-Aligned Pyramid
+# *
+# **
+# ***
+# ****
+# *****
+
+# Write your code below
+
+
+
+
+# 🔹 Problem 16 — Centered Pyramid
+#     *
+#    ***
+#   *****
+#  *******
+# *********
+
+# Write your code below
+
+
+
+
+# 🔹 Problem 17 — Inverted Centered Pyramid
+# *********
+#  *******
+#   *****
+#    ***
+#     *
+
+# Write your code below
+
+
+
+
+# 🔹 Problem 18 — Hollow Square
+# *****
+# *   *
+# *   *
+# *   *
+# *****
+
+# Write your code below
+
+
+
+
+# 🔹 Problem 19 — Hollow Triangle
+# *
+# **
+# * *
+# *  *
+# *****
+
+# Write your code below
+
+
+
+
+# 🔹 Problem 20 — Number Pyramid
+#     1
+#    222
+#   33333
+#  4444444
+# 555555555
+
+# Write your code below

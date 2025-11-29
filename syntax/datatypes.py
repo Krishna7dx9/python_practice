@@ -173,7 +173,6 @@ print(type(user_info))
 # Write code here
 
 student_record = {"name": "Kris", "age": 19, "score": 96}
-
 print(student_record, student_record["score"])
 
 # Problem 9:
@@ -184,7 +183,6 @@ print(student_record, student_record["score"])
 # Write code here
 
 unique_nums = {1, 2, 3, 4, 1}
-
 print(unique_nums)
 
 # The set in python is designed to take unique values, when we explicitly put non-unique values,
@@ -206,9 +204,7 @@ print(type(a_1))
 print(type(b_1))
 
 a_1 = int(a_1)
-
 print(type(a_1))
 
 sum_a1_b1 = a_1 + b_1
-
 print(sum_a1_b1)

@@ -559,7 +559,15 @@ else:
 # "Multiple of 15" if divisible by both 3 and 5,
 # Otherwise print "None".
 
-
+num = int(input("Enter a number: "))
+if num % 3 == 0 and num % 5 == 0:
+   print("Multiple of 15")
+elif num % 5 == 0:
+   print("Multiple of 5")
+elif num % 3 == 0:
+   print("Multiple of 3")
+else:
+   print("None")
 
 # Problem 37:
 # Ask the user to input a number.
@@ -568,13 +576,23 @@ else:
 # "Positive" if positive,
 # "Zero" if zero.
 
-
-
+num = int(input("Enter a number: "))
+if num < 0 and num % 2 == 0:
+   print("Negative and Even")
+elif num < 0 and num % 2 != 0:
+   print("Negative and Odd")
+elif num > 0:
+   print("Positive")
+else:
+   print("Zero")
+ 
 # Problem 38:
 # Ask the user to input three numbers.
 # Print them in ascending order.
 
-
+num = map(int, input("Enter three numbers: ").split())
+num_ascending = sorted(num)
+print(f"Numbers in ascending: {num_ascending}")
 
 # Problem 39:
 # Ask the user to input a character.
@@ -582,7 +600,13 @@ else:
 # "Alphabet" if a letter,
 # "Other" otherwise.
 
-
+char = input("Enter a character: ")
+if char in "0123456789":
+   print("Digit")
+elif char.isalpha():
+   print("Alphabet")
+else:
+   print("Other")
 
 # Problem 40:
 # Ask the user to input two numbers.
@@ -591,4 +615,12 @@ else:
 # Print "Both negative" if both negative,
 # Otherwise print "Zero involved".
 
-
+a, b = map(int, input("Enter two numbers: "))
+if a > 0  and b > 0:
+   print("Both positive")
+elif a < 0 and b < 0:
+   print("Both negative")
+elif a > 0 and b < 0 or a < 0 and b > 0:
+   print("One positive, one negative")
+else:
+   print("Zero involved")
