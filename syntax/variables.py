@@ -32,10 +32,6 @@ print(lo43)
 print(x)
 
 # ------------------------------------------------------------
-# EXTRA VARIABLE PRACTICE
-# ------------------------------------------------------------
-
-# ------------------------------------------------------------
 # Problem 5:
 # Create 6 variables:
 #   - your city (string)
@@ -153,7 +149,7 @@ your_fav_movie = "Batman"
 your_birth_year = 2005
 your_weight = 54.06
 skills_list = ["Flutter", "Python", "DSA", "LLD"]
-countries = ("Dubai", "California", "USA")
+countries = ("Dubai", "Hongkong", "USA")
 
 # ------------------------------------------------------------
 # Problem 12:
@@ -224,7 +220,7 @@ print(sentence_storing.count(" "))
 #   - are you learning Python? (bool)
 #   - a list of 4 dream companies
 # ------------------------------------------------------------
-
+                                                      
 # Your solution here
 
 your_favourite_sport = "football"

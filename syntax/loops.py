@@ -314,76 +314,30 @@ for row in range(5, 0, -1):
 
 # Write your code below
 
-for row in range(5):
-    for col in range(row):
-        print("*", end ="")
+n = 5
+for r in range(n):
+    for s in range(n - r - 1):
+        print(" ", end =  "")
+
+    for p in range(r + 1):
+        print("*", end = "")
     print()
 
-# 🔹 Problem 15 — Right-Aligned Pyramid
-# *
-# **
-# ***
-# ****
+# 🔹 Problem 15 — Left-Aligned Pyramid
 # *****
-
-# Write your code below
-
-
-
-
-# 🔹 Problem 16 — Centered Pyramid
-#     *
-#    ***
-#   *****
-#  *******
-# *********
-
-# Write your code below
-
-
-
-
-# 🔹 Problem 17 — Inverted Centered Pyramid
-# *********
-#  *******
-#   *****
-#    ***
+#  ****
+#   ***
+#    **
 #     *
 
-# Write your code below
-
-
-
-
-# 🔹 Problem 18 — Hollow Square
-# *****
-# *   *
-# *   *
-# *   *
-# *****
 
 # Write your code below
-
-
-
-
-# 🔹 Problem 19 — Hollow Triangle
-# *
-# **
-# * *
-# *  *
-# *****
-
-# Write your code below
-
-
-
-
-# 🔹 Problem 20 — Number Pyramid
-#     1
-#    222
-#   33333
-#  4444444
-# 555555555
-
-# Write your code below
+print()
+print()
+n = 6
+for r in range(n):
+    for s in range(r):
+        print(" ", end = "")
+    for p in range(n - r):
+        print("*", end ="")
+    print()

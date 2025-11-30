@@ -178,3 +178,155 @@ def show_profile(**details):
 # ------------------------------------------------------------
 
 square_num = lambda num_a: num_a * num_a
+
+# ------------------------------------------------------------
+# Problem 9:
+# Create a function called greet_users that:
+# - takes a list of names
+# - prints "Hello, <name>!" for each name
+# Example: greet_users(["Kris","Alex"]) → prints:
+# Hello, Kris!
+# Hello, Alex!
+# ------------------------------------------------------------
+
+# Write your code below
+def greet_users(names):
+        for name in names:
+            print(f"Hello, {name}!")
+
+
+# ------------------------------------------------------------
+# Problem 10:
+# Create a function calculate_power that:
+# - takes 2 numbers: base and exponent
+# - returns base ** exponent
+# ------------------------------------------------------------
+
+# Write your code below
+
+def calculate_power(base, exponent):
+    return base ** exponent
+
+# ------------------------------------------------------------
+# Problem 11:
+# Create a function filter_even that:
+# - takes a list of integers
+# - returns a new list containing only even numbers
+# ------------------------------------------------------------
+
+# Write your code below
+
+def filter_even(integers):
+    new_list = []
+    for n in integers:
+        if n % 2 == 0:
+            new_list.append(n)
+    return new_list
+
+# ------------------------------------------------------------
+# Problem 12:
+# Create a function factorial using recursion:
+# - input: n
+# - output: factorial of n
+# ------------------------------------------------------------
+
+# Write your code below
+
+def factorial(n): 
+        if n == 0 or n == 1:
+            return 1
+        else:
+            return n * factorial(n - 1)
+
+# ------------------------------------------------------------
+# Problem 13:
+# Create a function swap_numbers that:
+# - takes two numbers a and b
+# - returns them swapped
+# ------------------------------------------------------------
+
+# Write your code below
+
+def swap_numbers(a, b):
+    return (b , a)
+
+# ------------------------------------------------------------
+# Problem 14:
+# Write a lambda function triple that:
+# - input: a number
+# - output: number * 3
+# ------------------------------------------------------------
+
+# Write your code below
+
+triple = lambda number: number * 3
+
+# 15. Write a function `square(n)` that returns the square of a number.
+
+def square(n):
+    return n ** 2
+
+# 16. Write a function `is_even(n)` that returns True if n is even, else False.
+
+def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+# 17. Write a function `max_of_two(a, b)` that returns the larger number.
+
+def max_of_two(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+# 18. Write a function `reverse_string(s)` without using slicing.
+
+def reverse_string(s):
+    rev = ""
+    for char in s:
+        rev = char + rev
+    return rev
+
+# 19. Write a recursive function `sum_upto(n)` that returns 1 + 2 + ... + n.
+
+def sum_upto(n):
+     if n == 0:
+         return n
+     else:
+         return n + sum_upto(n - 1)
+
+# 20. Write a recursive function `power(base, exp)` that calculates base^exp.
+
+def power(base, exp):
+    if exp == 0:
+        return 1
+    else:
+        return base * power(base, exp - 1)
+
+# 21. Write a function that swaps three numbers (a → b → c → a).
+
+def swap(a, b, c):
+    return b, c, a
+
+# 22. Write a lambda function `last_digit` that returns the last digit of a number.
+
+
+
+# 23. Write a function `count_vowels(s)` that returns the number of vowels in a string.
+
+# 24. Write a function `merge_lists(l1, l2)` that returns a single combined list.
+
+# 25. Write a function `is_palindrome(s)` that checks if a string is palindrome.
+
+# 26. Write a function `min_of_three(a, b, c)` without using min().
+
+# 27. Write a function `factorial_iterative(n)` using loop (not recursion).
+
+# 28. Write a function `unique_elements(lst)` that returns list of unique elements.
+
+# 29. Write a function `multiply_list(lst)` that multiplies all numbers in a list.
+
+# 30. Write a function `safe_divide(a, b)` that returns "Error" if b == 0 else a/b.
