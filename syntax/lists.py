@@ -115,9 +115,9 @@ print(numbers_p1[0])
 print(numbers_p1[-1])
 low = 0
 high = len(numbers_p1)
-mid = (low + high) / 2
+mid = (low + high) // 2
 print(mid)
-# print(numbers_p1[mid])
+print(numbers_p1[mid])
 
 # ------------------------------------------------------------
 # Problem 2:
@@ -139,14 +139,13 @@ names_p2[-1] = "Maya"
 
 nums_p3 = [4, 11, 22, 9, 16, 7, 30]
 # Your solution here
+even_c = []
 
-n = 0
-while n < len(nums_p3):
-    if nums_p3[n] % 2 == 0:
-       print(nums_p3[n])
-    n += 1
-else:
-    n += 1
+for n in range(len(nums_p3)+ 1):
+    if n % 2 == 0:
+        print(n)
+        even_c.append(n)
+    print(len(even_c))
 
 # ------------------------------------------------------------
 # Problem 4:
