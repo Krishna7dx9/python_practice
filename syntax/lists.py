@@ -141,11 +141,11 @@ nums_p3 = [4, 11, 22, 9, 16, 7, 30]
 # Your solution here
 even_c = []
 
-for n in range(len(nums_p3)+ 1):
+for n in nums_p3:
     if n % 2 == 0:
         print(n)
         even_c.append(n)
-    print(len(even_c))
+print(len(even_c))
 
 # ------------------------------------------------------------
 # Problem 4:
@@ -159,9 +159,10 @@ arr_p4 = [9, 2, 14, 1, 5, 8]
 # Your solution here
 
 arr_p4.sort()
+print(arr_p4)
+
 arr_p4.reverse()
-print(arr_p4.sort())
-print(arr_p4.reverse())
+print(arr_p4)
 
 # ------------------------------------------------------------
 # Problem 5:
@@ -175,9 +176,14 @@ print(arr_p4.reverse())
 # Example input: 5 10 2 8
 # Your solution here
 
-nums_0 = input("Enter List of Numbers:"  )
-nums_list = list(nums_0)
+num_0 = list(map(int, input("Enter numbers: ").split()))
+maxi = max(num_0)
+mini = min(num_0)
+summ = sum(num_0)
 
+print(f"Maximum: {maxi}")
+print(f"Minimum: {mini}")
+print(f"Sum: {summ}")
 
 # ------------------------------------------------------------
 # Problem 6:
@@ -201,6 +207,10 @@ print(squared_list_p6)
 list_with_dupes_p7 = [1, 3, 3, 5, 1, 7, 7, 2]
 # Your solution here
 
+new_list = []
+for n in list_with_dupes_p7:
+    if n not in new_list:
+        new_list.append(n)
 
 # ------------------------------------------------------------
 # Problem 8:
@@ -212,3 +222,152 @@ orig_list_p8 = [10, 20, 30]
 # Your solution here
 
 orig_list_p8_copy = orig_list_p8[:]
+orig_list_p8_copy.append(5)
+
+print(orig_list_p8_copy)
+print(orig_list_p8)
+
+# ------------------------------------------------------------
+# Problem 9:
+# Given a list of numbers, find the second largest number without using max() twice.
+# ------------------------------------------------------------
+
+def second_largest_number(lst):
+    lst_copy = lst.copy()
+    max_1 = max(lst_copy)
+    lst_copy.remove(max_1)
+    if len(lst_copy) >= 1:
+        max_2 = lst_copy[0]
+        for n in lst_copy:
+            if n > max_2:
+                max_2 = n
+        return max_2
+
+# ------------------------------------------------------------
+# Problem 10:
+# Count how many times a specific value occurs in a list.
+# Input: list and value
+# ------------------------------------------------------------
+
+def count_occurrences(lst, val):
+    lst_count = lst.count(val)
+    return lst_count
+
+# ------------------------------------------------------------
+# Problem 11:
+# Merge two lists into a new list.
+# ------------------------------------------------------------
+
+def merge_lists(l1, l2):
+     l3 = l1 + l2
+     return l3
+
+# ------------------------------------------------------------
+# Problem 12:
+# Find all indices of a value in a list.
+# Input: list and value
+# Output: list of indices
+# ------------------------------------------------------------
+
+def find_all_indices(lst, val):
+    indices = []
+    for  i, n in enumerate(lst):
+        if n == val:
+            indices.append(i)
+    return indices
+
+# ------------------------------------------------------------
+# Problem 13:
+# Reverse a list using a loop (no slicing, no reverse()).
+# ------------------------------------------------------------
+
+def reverse_list_loop(lst):
+    rev_lst = []
+    for i in lst:
+        rev_lst = [i] + rev_lst
+    return rev_lst
+
+# ------------------------------------------------------------
+# Problem 14:
+# Create a list of squares from 1 to n using list comprehension.
+# ------------------------------------------------------------
+
+def squares_list(n):
+    squares = [x * x for x in range(1, n + 1)]
+    return squares
+
+# ------------------------------------------------------------
+# Problem 15:
+# Remove all duplicates from a list without using set().
+# ------------------------------------------------------------
+
+def remove_duplicates_loop(lst):
+    new_lst = []
+    for n in lst:
+        if n not in new_lst:
+            new_lst.append(n)
+    return new_lst
+
+# ------------------------------------------------------------
+# Problem 16:
+# Check if a list is a palindrome (same forwards and backwards).
+# ------------------------------------------------------------
+
+def is_list_palindrome(lst):
+    lst_rev = lst[:]
+    lst_rev.reverse()
+    if lst == lst_rev:
+        return True
+    else:
+        return False
+
+# ------------------------------------------------------------
+# Problem 17:
+# Given a list of numbers, return a new list with only even numbers.
+# ------------------------------------------------------------
+
+def filter_even_numbers(lst):
+    even_num = []
+    for n in lst:
+        if n % 2 == 0:
+            even_num.append(n)
+    return even_num
+
+
+# ------------------------------------------------------------
+# Problem 18:
+# Given a nested list (list of lists), flatten it into a single list.
+# ------------------------------------------------------------
+
+def flatten_nested_list(lst_of_lsts):
+    flatten_lst = []
+    for sublist in lst_of_lsts:
+        for element in sublist:
+            flatten_lst.append(element)
+    return flatten_lst
+
+# ------------------------------------------------------------
+# Problem 19:
+# Count the total number of elements in a nested list.
+# Example: [[1,2], [3,4,5]] → 5
+# ------------------------------------------------------------
+
+def count_total_elements(lst_of_lsts):
+    count = 0
+    for sublist in lst_of_lsts:
+        for element in sublist:
+            count += 1
+    return count
+
+# ------------------------------------------------------------
+# Problem 20:
+# Given a list, return a new list with elements multiplied by their index.
+# ------------------------------------------------------------
+
+def multiply_by_index(lst):
+    element_x_index = []
+    for i, x in enumerate(lst):
+        multi = i * x
+        element_x_index.append(multi)
+    return element_x_index
+

@@ -67,8 +67,8 @@ f1(t1)
 
 t = (5, 10, 15, 20)
 
-def f2(t):
-    return t[1, 3]
+def f2(t00):
+    return t00[1:3]
 
 f2(t)
 
@@ -83,11 +83,12 @@ f3(t2)
 
 # 4. Return the index of value 50 in the tuple (10, 20, 30, 40, 50).
 
-t3 = (5, 10, 15, 20)
+t3 = (10, 20, 30, 40, 50)
 
 def f4(t3):
-    return t3.index(50)
-
+    x = t3.index(50)
+    return x
+ 
 f4(t3)
 
 # 5. Given a tuple (1, 2, 3) unpack it into variables a, b, c and return a + c.
@@ -104,11 +105,81 @@ f5(t4)
 #    like: (1, (2, 3), (4, 5))
 #    and return the element 3.
 
+def nested_tuple(a):
+    return a[1][1]
+
+a = (1, (2, 3), (4, 5))
+
+nested_tuple(a)
+
 # 7. Combine two tuples (1, 2) and (3, 4) without using list conversion.
+
+a = (1, 2)
+b = (3, 4)
+
+c = a + b
 
 # 8. Repeat the tuple ('x',) 5 times.
 
+t8 = ('x',)
+t9 = t8 * 5
+
 # 9. Write a function that checks if the first and last element of a tuple are equal.
+
+def check(a):
+    return a[0] == a[-1]
+
+check(a)
 
 # 10. Given a tuple (10, 20, 30, 40), return a NEW tuple where each element is multiplied by 2.
 
+t10 = (10, 20, 30, 40)
+
+def each_by2(t):
+    a = ()
+    for x in t:
+        a = a + (x * 2,)
+    return a
+
+each_by2(t10)
+
+# 11. Given a tuple t = (1, 2, 3, 4, 5)
+#     return a NEW tuple containing only the even numbers.
+
+
+# 12. Write a function that swaps the first and last element 
+#     of a tuple and returns the new tuple.
+#     Example: (10, 20, 30, 40) → (40, 20, 30, 10)
+
+
+# 13. Given two tuples (1, 2, 3) and (4, 5), 
+#     return a single tuple using unpacking (no + operator).
+
+
+# 14. Write a function that returns the maximum element of a tuple
+#     WITHOUT using max().
+
+
+# 15. Given a tuple of strings ("a","bb","ccc"), 
+#     return a tuple of their lengths.  → (1,2,3)
+
+
+# 16. Write a function that reverses a tuple WITHOUT using slicing.
+
+
+# 17. Given t = (10, 20, 30, 40, 50),
+#     return a tuple of only the middle elements → (20, 30, 40)
+
+
+# 18. Count how many tuples exist inside:
+#     x = (1, (2, 3), (4, 5, 6), 7, (8,))
+#     Output → 3
+
+
+# 19. Given t = ((1,2), (3,4), (5,6))
+#     return a tuple of all second elements → (2, 4, 6)
+
+
+# 20. Write a function that returns True if a tuple is sorted
+#     in NON-decreasing order, else False.
+#     Example: (1,2,2,3) → True; (3,1,2) → False
