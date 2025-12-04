@@ -146,40 +146,132 @@ each_by2(t10)
 # 11. Given a tuple t = (1, 2, 3, 4, 5)
 #     return a NEW tuple containing only the even numbers.
 
+t11 = (1, 2, 3, 4, 5)
+
+def even_tuple(t):
+    t12 = ()
+    for x in t:
+        if x % 2 == 0:
+            t12 = t12 + (x,)
+    return t12
+
+even_tuple(t11)
 
 # 12. Write a function that swaps the first and last element 
 #     of a tuple and returns the new tuple.
 #     Example: (10, 20, 30, 40) → (40, 20, 30, 10)
 
+t13 = (10, 20, 30, 40)
+
+def swap_tuple(t):
+    last = t[-1]
+    first = t[0]
+    l = len(t) - 1
+    middle = t[1:l]
+    t14 = last, *middle, first
+    return t14
+
+swap_tuple(t13)
 
 # 13. Given two tuples (1, 2, 3) and (4, 5), 
 #     return a single tuple using unpacking (no + operator).
 
+t14 = (1, 2, 3)
+t15 = (4, 5)
+
+def single_tuple(a, b):
+    t16 = *a, *b
+    return t16
+
+single_tuple(t14, t15)
 
 # 14. Write a function that returns the maximum element of a tuple
 #     WITHOUT using max().
 
+def maxi(t):
+    maximum = t[0]
+    for x in t:
+        if x > maximum:
+            maximum = x
+    return maximum
+
+maxi(t14)
 
 # 15. Given a tuple of strings ("a","bb","ccc"), 
 #     return a tuple of their lengths.  → (1,2,3)
 
+def tuple_length(t):
+    length_tuple = ()
+    for x in t:
+        z = str(x)
+        y = len(z)
+        length_tuple = length_tuple + (y,)
+    return length_tuple
+
+tuple_length(t14)
 
 # 16. Write a function that reverses a tuple WITHOUT using slicing.
 
+def reverse_(t):
+    t16 = ()
+    for x in t:
+        t16 = (x,) + t16
+    return t16
+
+reverse_(t14)
 
 # 17. Given t = (10, 20, 30, 40, 50),
 #     return a tuple of only the middle elements → (20, 30, 40)
 
+t17 = (10, 20, 30, 40, 50)
+
+def middle_(t):
+    l = len(t) - 1
+    return t[1:l]
+
+middle_(t17)
 
 # 18. Count how many tuples exist inside:
 #     x = (1, (2, 3), (4, 5, 6), 7, (8,))
 #     Output → 3
 
+x = (1, (2, 3), (4, 5, 6), 7, (8,))
+
+count = 0
+for tuple in x:
+    count += 1
+
+print(count)
 
 # 19. Given t = ((1,2), (3,4), (5,6))
 #     return a tuple of all second elements → (2, 4, 6)
 
+t = ((1,2), (3,4), (5,6))
+
+def second(t):
+    t18 = ()
+    for x in t:
+        a = x[1]
+        t18 = t18 + (a,)
+    return t18
+
+second(t)
 
 # 20. Write a function that returns True if a tuple is sorted
 #     in NON-decreasing order, else False.
 #     Example: (1,2,2,3) → True; (3,1,2) → False
+
+
+a = (1,2,2,3)
+
+def sorted_check(a):
+    i = len(a) - 1
+    l = a[0]
+    for x in a:
+        for i in range(0, i):
+            return a[i] >= l
+
+sorted_check(a)
+
+
+
