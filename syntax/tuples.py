@@ -238,8 +238,9 @@ middle_(t17)
 x = (1, (2, 3), (4, 5, 6), 7, (8,))
 
 count = 0
-for tuple in x:
-    count += 1
+for element in x:
+    if isinstance(element, tuple):
+        count += 1
 
 print(count)
 
@@ -261,17 +262,14 @@ second(t)
 #     in NON-decreasing order, else False.
 #     Example: (1,2,2,3) → True; (3,1,2) → False
 
-
-a = (1,2,2,3)
-
+a = (5,4,3,2,1)
 def sorted_check(a):
-    i = len(a) - 1
-    l = a[0]
-    for x in a:
-        for i in range(0, i):
-            return a[i] >= l
+    z = len(a)
+    p = a[0]
+    for i in range(0, z):
+        b = a[i] >= p
+        p = a[i]
+    print(b)    
+    return b
 
 sorted_check(a)
-
-
-
