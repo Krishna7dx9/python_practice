@@ -264,12 +264,13 @@ second(t)
 
 a = (5,4,3,2,1)
 def sorted_check(a):
-    z = len(a)
-    p = a[0]
-    for i in range(0, z):
-        b = a[i] >= p
-        p = a[i]
-    print(b)    
-    return b
+    prev = a[0]
+
+    for x in a:
+        if x < prev:
+            return False
+        prev = x
+    
+    return True
 
 sorted_check(a)
