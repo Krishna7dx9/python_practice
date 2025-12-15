@@ -1,60 +1,352 @@
-# ------------------------------------------------------------
-# OOP BASICS – Classes, Objects, Constructors, Methods
-# ------------------------------------------------------------
+# ========================================================
+# PYTHON OOP (Object-Oriented Programming) FULL LESSON
+# ========================================================
 
+# ------------------------------
 # 1. Defining a Class
-# A class is a blueprint for creating objects.
+# ------------------------------
+# A class is like a blueprint for objects.
 
-class student:
+class Person:
+    # class is like a blueprint for objects 
+    species = "Human"
 
-    # --------------------------------------------------------
-    # 2. Constructor (__init__)
-    # Runs automatically when an object is created.
-    # 'self' refers to the current object instance.
-    # --------------------------------------------------------
+    # constructor / initializer
+    def __init__(self, name, age):
+        # instance varible (unique to each object)
+        self.name = name
+        self.age = age
 
-    def __init__(self, name, age, branch):
-        self.name = name                      # attribute
-        self.age = age                        # attribute
-        self.branch = branch                  # attribute
+    # Instance method
+    def greet(self):
+        print(f"Hello, my name is {self.name}, I am {self.age} years old.")
 
-    # --------------------------------------------------------
-    # 3. Instance Method
-    # Methods always take 'self' as first argument.
-    # --------------------------------------------------------
-
-    def display_info(self):
-        print("Name: ", self.name)
-        print("Age: ", self.age)
-        print("Branch: ", self.branch)
-
-    # Example: method performing some operation
+    # Method to check if adult
     def is_adult(self):
-            return self.age >= 18
+        return self.age >= 18
         
-# ------------------------------------------------------------
-# 4. Creating Objects (Instances)
-# ------------------------------------------------------------
+# ------------------------------
+# 2. Creating Objects
+# ------------------------------
 
-s1 = student("Kris", 20, "CSE")
-s2 = student('John', 17, "CSE")
+# Create two objects from person class
+person1 = Person("Kris", 20)
+person2 = Person("Alex", 15)
 
-# ------------------------------------------------------------
-# 5. Calling Methods
-# ------------------------------------------------------------
+# Accessing attributes
+print(person1.name)         # Kris
+print(person2.age)          # 15
 
-# student 1 info
-s1.display_info()
-print("Is adult: ", s1.is_adult())
+# Calling methods
+person1.greet()             # Hello, my name is Kris, I am 20 years old.
+print("Is person2 adult?", person2.is_adult())        # False
 
-# student 2 info
-s2.display_info()
-print("Is adult: ", s2.is_adult())
+# Accessing class variable
+print("Species: ", Person.species)
 
-# ------------------------------------------------------------
-# 6. Updating Object Attributes
-# ------------------------------------------------------------
+# ------------------------------
+# 3. Updating Attributes
+# ------------------------------
 
+person2.age = 18
+print("Updated age of person2: ", person2.age)
+
+# ------------------------------
+# 4. Inheritance
+# ------------------------------
+# A child class can reuse code from a parent class
+
+class Student(Person):
+    def __init__(self, name, age, grade):
+        super().__init__(name, age)                # Call parent constructor
+        self.grade = grade
+
+    # Overriding greet method
+    def greet(self):
+        print(f"Hi, I'm {self.name}, {self.age} years old, in grade {self.grade}.")
+
+# Create a Student object
+student1 = Student("Sam", 16, 10)
+student1.greet()                  # Overridden method
+print("Species: ", student1.species)
+
+# ------------------------------
+# 5. Encapsulation (Access Modifiers)
+# ------------------------------
+
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner                   # public
+        self._balance = balance              # protected (convention: single _)
+        self.__pin = 1234                    # private (name mangling)
+
+    # public method to show balance
+    def show_balance(self):
+        print(f"{self.owner}'s balance is {self._balance}")
+
+    # private method (cannot be called outside easily)
+    def __show_pin(self):
+        print(f"PIN is {self.__pin}")
+
+    def verify_pin(self, entered_pin):
+        return entered_pin == self.__pin
+
+account = BankAccount("Kris", 50000)
+account.show_balance()         # 50000
+# account.__show_pin()         # Error: private method
+account.verify_pin(123)
+
+# ------------------------------
+# 6. Polymorphism Example
+# ------------------------------
+
+class Dog:
+    def speak(self):
+        print("Woof!")
+
+class Cat:
+    def speak(self):
+        print("Meow")
+
+# Both objects have speak() but behave diferently
+animals = [Dog(), Cat()]
+for animal in animals:
+    animal.speak()
+
+# ------------------------------
+# 7. Special / Dunder Methods
+# ------------------------------
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    # string represantation
+    def __str__(self):
+        return f"Book: {self.title} by {self.author}"
+    
+    # Length representation
+    def __len__(self):
+        return len(self.title)
+    
+book1 = Book("Python 101", "Kris")
+print(book1)
+print("Length of title: ", len(book1))           # __len__ called
+
+# ========================================================
+# PYTHON OOP — TEST FILE
+# ========================================================
+# RULES:
+# 1. Write code only where instructed.
+# 2. Do not modify questions.
+# 3. Do not add extra prints unless asked.
+# 4. All answers must be executable.
+# ========================================================
+
+# --------------------------------------------------------
+# Q1. Class & Object Basics
+# --------------------------------------------------------
+# Create a class named Car
+# Attributes: brand (str), year (int)
+# Method: info() → prints "Brand: <brand>, Year: <year>"
+
+# WRITE CODE BELOW
+
+# class car
+class Car:
+    # constructor / initializer
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+        
+    # Instance method
+    def info(self):
+        print(f"Brand: {self.brand}, Year: {self.year}")
+
+# creating objects
+car1 = Car("Toyota", 1984)
+
+# calling methods
+car1.info()
+
+# --------------------------------------------------------
+# Q2. Constructor & Instance Variables
+# --------------------------------------------------------
+# Create a class User
+# Constructor takes: username, email
+# Store them as instance variables
+# Create ONE object and print both attributes
+
+# WRITE CODE BELOW
+
+# class user
+class User:
+    # constructor / initializer
+    def __init__(self, username, email):
+        # instance variable
+        self.username = username
+        self.email = email
+
+# object user1
+user1 = User("Krish7dx9", "sharmakriss985@gmail.com")
+print(f"Username: {user1.username}, Email: {user1.email}")
+
+# --------------------------------------------------------
+# Q3. Class Variable vs Instance Variable
+# --------------------------------------------------------
+# Create a class Employee
+# Class variable: company = "Google"
+# Instance variables: name, salary
+# Create TWO employees and print:
+# name, salary, company (for both)
+
+# WRITE CODE BELOW
+
+# class Employee
+class Employee:
+    # class variable
+    company = "Google"
+
+    # constructor / initializer
+    def __init__(self, name, salary):
+        # instance varible
+        self.name = name
+        self.salary = salary
+        
+# object employee1
+employee1 = Employee("Kris", 15000)
+print(f"Company: {Employee.company}, Name: {employee1.name}, Salary: {employee1.salary}")
+
+# object employee2
+employee2 = Employee("Manav", 20000)
+print(f"Company: {Employee.company}, Name: {employee2.name}, Salary: {employee2.salary}")
+
+# --------------------------------------------------------
+# Q4. Method Returning Value
+# --------------------------------------------------------
+# Create a class Rectangle
+# Attributes: length, breadth
+# Method: area() → returns area
+# Print the returned value
+
+# WRITE CODE BELOW
+
+class Rectangle:
+    # constructor / initializer
+    def __init__(self, length, breadth):
+        # instance variable
+        self.length = length
+        self.breadth = breadth
+
+    # method area
+    def area(self):
+        return self.length * self.breadth
+
+# object rectangle1 
+rectangle1 = Rectangle(5, 10)
+
+# calling method 
+print(rectangle1.area())
+
+# --------------------------------------------------------
+# Q5. Inheritance
+# --------------------------------------------------------
+# Create a parent class Animal
+# Method: speak() → prints "Animal speaks"
+#
+# Create child class Dog
+# Override speak() → prints "Dog barks"
+#
+# Create Dog object and call speak()
+
+# WRITE CODE BELOW
+
+# parent class
+class Animal:
+    def __init__(self, speaks):
+        
+
+# --------------------------------------------------------
+# Q6. Using super()
+# --------------------------------------------------------
+# Create class Person
+# Constructor: name, age
+#
+# Create class Student inheriting Person
+# Additional attribute: grade
+# Use super() to initialize name and age
+# Create object and print all attributes
+
+# WRITE CODE BELOW
+
+
+
+
+
+# --------------------------------------------------------
+# Q7. Encapsulation
+# --------------------------------------------------------
+# Create class BankAccount
+# Public variable: owner
+# Protected variable: _balance
+# Private variable: __pin
+#
+# Constructor initializes all
+# Create method get_balance() → returns balance
+#
+# Create object and print balance using method ONLY
+
+# WRITE CODE BELOW
+
+
+
+
+
+# --------------------------------------------------------
+# Q8. Polymorphism
+# --------------------------------------------------------
+# Create two classes:
+# Cat → method sound() prints "Meow"
+# Cow → method sound() prints "Moo"
+#
+# Store objects in a list
+# Loop and call sound() on each
+
+# WRITE CODE BELOW
+
+
+
+
+
+# --------------------------------------------------------
+# Q9. Dunder Method __str__
+# --------------------------------------------------------
+# Create class Laptop
+# Attributes: brand, price
+# Implement __str__ to return:
+# "Laptop <brand> costs <price>"
+#
+# Print the object directly
+
+# WRITE CODE BELOW
+
+
+
+
+
+# --------------------------------------------------------
+# Q10. Logic Test (NO SHORTCUTS)
+# --------------------------------------------------------
+# Create class Counter
+# Attribute: count (starts at 0)
+# Method increment() → increases count by 1
+# Method reset() → sets count to 0
+#
+# Increment 3 times, print count
+# Reset, print count
+
+# WRITE CODE BELOW
 
 
 
