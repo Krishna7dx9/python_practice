@@ -255,39 +255,56 @@ print(rectangle1.area())
 # Create a parent class Animal
 # Method: speak() → prints "Animal speaks"
 #
-# Create child class Dog
+# Create child class DogPoly
 # Override speak() → prints "Dog barks"
 #
-# Create Dog object and call speak()
+# Create DogPoly object and call speak()
 
 # WRITE CODE BELOW
 
 # parent class
 class Animal:
-    def __init__(self, speaks):
-        
+    def speak(self):
+        print("Animal speaks")
+
+# child class
+class DogPoly(Animal):
+    def speak(self):
+        print("Dog barks")                     # override speak()
+
+dog1 = DogPoly()
+dog1.speak()                                  # method calling  
 
 # --------------------------------------------------------
 # Q6. Using super()
 # --------------------------------------------------------
-# Create class Person
+# Create class PersonBase
 # Constructor: name, age
 #
-# Create class Student inheriting Person
+# Create class StudentDerived inheriting PersonBase
 # Additional attribute: grade
 # Use super() to initialize name and age
 # Create object and print all attributes
 
 # WRITE CODE BELOW
 
+class PersonBase:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
+class StudentDerived(PersonBase):
+    def __init__(self, name, age, grade):
+        super().__init__(name, age)
+        self.grade = grade
 
-
+student1 = StudentDerived("Kris", 19, 4)
+print(student1.name, student1.age, student1.grade)
 
 # --------------------------------------------------------
 # Q7. Encapsulation
 # --------------------------------------------------------
-# Create class BankAccount
+# Create class BankAccountEncap
 # Public variable: owner
 # Protected variable: _balance
 # Private variable: __pin
@@ -297,27 +314,46 @@ class Animal:
 #
 # Create object and print balance using method ONLY
 
-# WRITE CODE BELOW
+class BankAccountEncap:
+    def __init__(self, owner, balance, pin):          
+        self.owner = owner
+        self._balance = balance
+        self.__pin = pin
 
+    def  get_balance(self):
+        return self._balance
 
+# object    
+bankaccount1 = BankAccountEncap("Kris", 15000, 2609)
 
-
+# method calling
+print(bankaccount1.get_balance())
 
 # --------------------------------------------------------
 # Q8. Polymorphism
 # --------------------------------------------------------
 # Create two classes:
-# Cat → method sound() prints "Meow"
-# Cow → method sound() prints "Moo"
+# CatPoly → method sound() prints "Meow"
+# CowPoly → method sound() prints "Moo"
 #
 # Store objects in a list
 # Loop and call sound() on each
 
 # WRITE CODE BELOW
 
+class CatPoly:
+    def sound(self):
+        print("Meow")
 
+class CowPoly:
+    def sound(self):
+        print("Moo")
 
+# storing class in a list
+animals = [CatPoly(), CowPoly()]
 
+for animal in animals:
+    animal.sound()
 
 # --------------------------------------------------------
 # Q9. Dunder Method __str__
@@ -331,12 +367,19 @@ class Animal:
 
 # WRITE CODE BELOW
 
+class Laptop:
+    def __init__(self, brand, price):
+        self.brand = brand
+        self.price = price
 
-
-
+    def __str__(self):
+        return f"Laptop {self.brand} costs {self.price}"
+    
+laptop1 = Laptop("hp", 15000)
+print(laptop1)
 
 # --------------------------------------------------------
-# Q10. Logic Test (NO SHORTCUTS)
+# Q10. Logic Test 
 # --------------------------------------------------------
 # Create class Counter
 # Attribute: count (starts at 0)
@@ -348,6 +391,21 @@ class Animal:
 
 # WRITE CODE BELOW
 
+class Counter:
+    def __init__(self):
+        self.count = 0                        # starts at 0
 
+    def increment(self):
+        self.count += 1
 
+    def reset(self):
+        self.count = 0
 
+counter1 = Counter()
+counter1.increment()
+counter1.increment()
+counter1.increment()
+print(counter1.count)                         # prints 3
+
+counter1.reset()
+print(counter1.count)                         # prints 0
