@@ -1,44 +1,75 @@
 # ============================================================
-# PYTHON DECORATORS 
+# PYTHON DECORATORS — EXPLAINED WITH CODE AND REASONS
 # ============================================================
 
 # ------------------------------------------------------------
-# 1.  A FUNCTION IS JUST A VARIABLE
+# WHY DECORATORS EXIST
 # ------------------------------------------------------------
+# We want to ADD extra behavior to a function
+# WITHOUT changing the function itself.
+#
+# Example:
+# - logging
+# - timing
+# - authentication
+#
+# Decorators solve this cleanly.
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# STEP 1: FUNCTIONS ARE OBJECTS (WHY THIS MATTERS)
+# ------------------------------------------------------------
+# Decorators only work because functions are treated like data.
 
 def greet():
     print("Hello")
 
-# 'greet' is just a variable pointing to a function
+# 'greet' is NOT special syntax
+# It is variable holding a function object
+
 another_name = greet
 
-# another_name() does the same thing as greet()
+# WHY this matters:
+# If a function can be assigned,
+# it can also be wrapped, replaced, or returned.
 
 # ------------------------------------------------------------
-# 2. FUNCTION PASSED AS ARGUMENT / A FUNCTION CAN BE PASSED INTO ANOTHER FUNCTION
+# STEP 2: PASSING A FUNCTION (WHY NEEDED)
 # ------------------------------------------------------------
+# A decorator must RECEIVE a function to modify it.
 
-def call_function(func):
-    # 'func' is a function object
+def run(func):
+    # 'func' now refers to greet
     func()
 
-# call_function(greet) would execute greet()
-call_function(greet)                                     
+run(greet)
+
+# WHY:
+# The decorator needs access to the function
+# so it can control WHEN and HOW it runs.
 
 # ------------------------------------------------------------
-# 3. ADD EXTRA BEHAVIOR AROUND A FUNCTION
+# STEP 3: ADDING BEHAVIOR (PROBLEM DEMO)
 # ------------------------------------------------------------
+# Let’s add behavior before and after greet()
 
-def add_behavior(func):
-    print("Before function")
+def add_behaviour(func):
+    print("Before Function")
     func()
-    print("After Function")
+    print("After function")
 
-add_behavior(greet)
+add_behaviour(greet)
+
+# WHY THIS IS NOT A DECORATOR:
+# - It runs immediately
+# - We cannot reuse it
+# - We cannot call greet normally anymore
 
 # ------------------------------------------------------------
-# 4. RETURN A NEW FUNCTION (WRAPPER)
+# STEP 4: RETURN A FUNCTION (WRAPPER)
 # ------------------------------------------------------------
+# Instead of running immediately,
+# we RETURN a NEW FUNCTION.
 
 def decorator(func):
 
@@ -47,54 +78,90 @@ def decorator(func):
         func()
         print("After function")
 
-    # IMPORTANT:
-    # we return the wrapper function
+    # WHY return wrapper:
+    # We want delayed execution
+    # We want reuse
     return wrapper
 
 # ------------------------------------------------------------
-# 5. MANUALLY APPLY THE DECORATOR
+# STEP 5: REPLACING THE ORIGINAL FUNCTION
 # ------------------------------------------------------------
+# This is the CORE IDEA of decorators.
 
 def say_hi():
-    print("Hi")
+    print("hi") 
 
-# This line is the core idea of decorators  
+# WHAT THIS LINE DOES:
+# - decorator receives say_hi
+# - decorator returns wrapper
+# - say_hi is REPLACED by wrapper
 say_hi = decorator(say_hi)
 
 say_hi()
 
-# Original say_hi is now wrapped
+# WHY:
+# Now calling say_hi() runs wrapper()
+# which internally runs the original function
 
 # ------------------------------------------------------------
-# 6. USING @ SYNTAX (NO NEW LOGIC)
+# STEP 6: @decorator SYNTAX (WHY IT EXISTS)
 # ------------------------------------------------------------
+# This is only SYNTAX SUGAR.
+# No new behavior.
 
-@decorator 
+@decorator
 def say_hello():
-    print("Hello")
+    print("hello")
 
-# Python internally does
+# Python internally does:
 # say_hello = decorator(say_hello)
 
 say_hello()
 
 # ------------------------------------------------------------
-# STEP 7: DECORATORS WITH ARGUMENTS (*args, **kwargs)
+# STEP 7: WHY *args AND **kwargs ARE REQUIRED
 # ------------------------------------------------------------
+# Real functions take arguments.
+# Decorators must work for ALL functions.
 
-def decorator_with_args(func):
+def universal_decorator(func):
 
     def wrapper(*args, **kwargs):
-        print("Arguments: ", args, kwargs)
+        # WHY *args, **kwargs:
+        # - Accept any number of arguments
+        # - Forward them safely
         return func(*args, **kwargs)
     
     return wrapper
 
-@decorator_with_args
+@universal_decorator
 def add(a, b):
-    print(a + b)
+    return a + b
 
-add(3, 4)
+print(add(3, 4))
+
+# ------------------------------------------------------------
+# STEP 8: METADATA PROBLEM (WHY wraps IS NEEDED)
+# ------------------------------------------------------------
+# Wrapping hides original function info.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
