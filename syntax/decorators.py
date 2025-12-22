@@ -1,6 +1,8 @@
 # ============================================================
 # PYTHON DECORATORS — EXPLAINED WITH CODE AND REASONS
 # ============================================================
+import time
+
 
 # ------------------------------------------------------------
 # WHY DECORATORS EXIST
@@ -309,37 +311,56 @@ def greet():
 
 # 8. Apply 'repeat_decorator' to this function using @ syntax:
 
+@repeat_decorator(3)
 def say_welcome():
     print("Welcome to Python")
-
-
-
 
 # 9. Create a decorator called 'uppercase_decorator' that:
 #    - Converts the string returned by the function to uppercase
 #    - Returns the modified string
 
-# 10. Apply 'uppercase_decorator' to this function using @ syntax:
+def uppercase_decorator(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)              # calls the original function
+        return result.upper()                       # modify the result
+    return wrapper
 
+# 10. Apply 'uppercase_decorator' to this function using @ syntax:P
+
+@uppercase_decorator
 def greet_user():
     return "hello user"
-
 
 # 11. Combine decorators: 
 #     - Apply 'repeat_decorator(times=2)' and 'uppercase_decorator' to this function
 #     - Ensure uppercase happens first, then repeat
 
+@repeat_decorator(2)
+@uppercase_decorator
 def hello_world():
     return "hello world"
-
 
 # 12. Create a decorator called 'timer_decorator' that:
 #     - Measures execution time of the function in seconds
 #     - Prints "Execution time: <time> seconds"
 #     - Returns the original function result
 
+import time
+
+def timer_decorator(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()                       # before function runs
+        result = func(*args, **kwargs)
+        end = time.time()                         # after function runs
+
+        print(f"Execution time: {end- start} seconds")
+        return result
+
+    return wrapper
+
 # 13. Apply 'timer_decorator' to this function and call it:
 
+@timer_decorator
 def compute_sum(n):
     return sum(range(n))
 
