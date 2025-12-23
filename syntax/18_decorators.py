@@ -1,8 +1,8 @@
 # ============================================================
 # PYTHON DECORATORS — EXPLAINED WITH CODE AND REASONS
 # ============================================================
-import time
 
+import time
 
 # ------------------------------------------------------------
 # WHY DECORATORS EXIST
@@ -363,61 +363,3 @@ def timer_decorator(func):
 @timer_decorator
 def compute_sum(n):
     return sum(range(n))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
