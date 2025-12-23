@@ -17,7 +17,7 @@
 # ------------------------------------------------------------
 
 am_interger = 45                                  # int
-a_floar = 45.25                                   # float
+a_float = 45.25                                   # float
 a_string = "Kris"                                 # str
 a_boolean = True                                  # bool
 a_list = [2,4,3,3]                                # list
