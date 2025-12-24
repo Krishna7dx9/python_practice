@@ -1,13 +1,18 @@
-Structured Python practice covering fundamentals and data structures & algorithms.
-Organized to maintain clean progression from basics → intermediate → DSA.
+# Python Practice Log
 
-Contents
+This is my personal repository for tracking progress in Python fundamentals, logic building, and Data Structures & Algorithms (DSA).
 
-basics/ – variables, datatypes, loops, functions, lists
-intermediate/ – tuples, sets, dictionaries, comprehensions, modules
-dsa/ – arrays, recursion, searching, sorting, complexity
-projects/ – small scripts & experiments
+## 📂 Repository Structure
 
-Purpose
+* **syntax/**: Core language practice (variables, loops, functions, decorators).
+* **patterns/**: Logic building through pattern-based coding.
+* **dsa/**: Implementations of data structures and algorithmic problems.
 
-Build strong Python foundations and improve problem-solving for technical interviews.
+## 🎯 Goals
+* Master Pythonic approaches for problem solving.
+* Maintain consistent coding discipline.
+* Build a well-organized DSA reference for interviews.
+
+## 🛠️ Environment
+* **Language**: Python 3.x
+* **IDE**: PyCharm / VS Code
