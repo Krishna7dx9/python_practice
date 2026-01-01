@@ -89,7 +89,6 @@ bit_not = ~m            # -(m + 1)
 shift_left = m << 1
 shift_right = m >> 1
 
-
 # 🔹 Problem 1 — Arithmetic Operators
 #
 # Create two integers:
@@ -128,7 +127,6 @@ print(modulus)
 
 power = i ** v
 print(power)
-
 
 # 🔹 Problem 2 — Comparison Operators
 

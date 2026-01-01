@@ -24,7 +24,6 @@ if marks >= 50:
 else :
   print("Fail")
 
-
 # -------------------------
 # 3️⃣ IF–ELIF–ELSE
 # -------------------------
@@ -65,7 +64,6 @@ if height > 50 and weight < 100:
 
 if height > 50 or weight < 100:
    print("At Least One condition matches")
-
 
 # -------------------------
 # 6️⃣ Conditional Expression (Ternary Operator)

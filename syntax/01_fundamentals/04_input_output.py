@@ -66,7 +66,6 @@ numbers = [int(x) for x in numbers_str]
 # Output clean list
 print(f"Your List: {numbers}")
 
-
 # ------------------------------------------------------------
 # 1. Take user's full name and print:
 #    - First name
@@ -193,7 +192,6 @@ average_rounded = round(average, 1)
 product = 1
 for x in three_integer:
     product *= x
-
 
 print(f"Sum: {sum_of_three_integer}")
 print(f"Average Rounded: {average_rounded}")
