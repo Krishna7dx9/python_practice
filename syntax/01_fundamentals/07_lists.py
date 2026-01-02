@@ -369,4 +369,3 @@ def multiply_by_index(lst):
         multi = i * x
         element_x_index.append(multi)
     return element_x_index
-
