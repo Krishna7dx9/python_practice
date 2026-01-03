@@ -135,21 +135,27 @@ print(A)
 #    # Print the removed element
 #    # Print nums after pop
 
+nums = {1, 2, 3, 4, 5}
+
 removed_ = nums.pop()
 print(removed_)
 print(nums)
 
 # 8. Given:
-#       A = {1, 2, 3}
-#       B = {1, 2, 3}
-#       C = {3, 4}
+#       A_ = {1, 2, 3}
+#       B_ = {1, 2, 3}
+#       C_ = {3, 4}
 #    Task:
 #    # Check if A is disjoint with C
 #    # Check if A is disjoint with B
 #    # Print both results
 
-z = A.isdisjoint(C)
-c = A.isdisjoint(B)
+A_ = {1, 2, 3}
+B_ = {1, 2, 3}
+C_ = {3, 4}
+
+z = A_.isdisjoint(C_)
+c = A_.isdisjoint(B_)
 print(z, c)
 
 # 9. Given:
@@ -159,6 +165,8 @@ print(z, c)
 #    # Check if X is a superset of {2, 6}
 #    # Print both results
 
+X = {1, 2, 3, 4, 5}
+
 print(X.issuperset({2,3}))
 print(X.issuperset({2,6}))
 
@@ -167,7 +175,10 @@ print(X.issuperset({2,6}))
 #     # Add numbers from 1 to 5 one by one
 #     # Print the final set
 
-
+a = set({})
+for x in range(1,6):
+    a.add(x)
+print(a)
 
 # 11. Given:
 #        A = {1, 2, 3}
@@ -176,28 +187,19 @@ print(X.issuperset({2,6}))
 #     # Print A
 #     # Print the type of A
 
+A = {1, 2, 3}
+
+A.clear()
+print(A)
+print(type(A))
+
 # 12. Given:
 #        data = [1, 2, 2, 3, 3, 3, 4]
 #     Task:
 #     # Convert data into a set
 #     # Print the set
 
-# 13. Given:
-#        A = {1, 2, 3}
-#        B = {3, 4, 5}
-#     Task:
-#     # Compute union using set method (not operator)
-#     # Compute intersection using set method
-#     # Print both results
+data = [1, 2, 2, 3, 3, 3, 4]
 
-# 14. Given:
-#        A = {10, 20, 30, 40}
-#     Task:
-#     # Create a new set B that contains only elements greater than 20
-#     # Print B
-
-# 15. Given:
-#        f = frozenset([1, 2, 3])
-#     Task:
-#     # Print f
-#     # Try adding 4 to f (observe behavior)
+data_ = set(data)
+print(data_)
