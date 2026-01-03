@@ -168,3 +168,38 @@ values = student.values()
 
 print("Keys: ", keys)
 print("Values: ", values)
+
+# 11) Create:
+#     user = {"name": "Kris", "age": 21}
+#     Add key "city" with value "Pune"
+#     Update age to 22
+#     Print the dictionary
+
+user = {"name": "Kris", "age": 21}
+user["city"] = "Pune"
+user["age"] = 22
+print(user)
+
+
+# 12) Create:
+#     marks = {"math": 80, "science": 90}
+#     Remove "math" safely
+#     Print the dictionary
+
+marks = {"math": 80, "science": 90}
+marks.pop("math", None)
+print(marks)
+
+# 13) Create:
+#     student = {
+#         "Alice": {"age": 20, "grade": "A"},
+#         "Bob": {"age": 22, "grade": "B"}
+#     }
+#     Print Bob's age
+
+student = {
+        "Alice": {"age": 20, "grade": "A"},
+        "Bob": {"age": 22, "grade": "B"}
+    }
+
+print(student["Bob"]["age"])
