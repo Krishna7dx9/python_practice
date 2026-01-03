@@ -114,3 +114,90 @@ print("{1, 2} is a subset of X: ", Y)
 
 F = frozenset([5, 6, 7])
 print("Frozenset: ", F)
+
+# 6. Given:
+#       A = {10, 20, 30}
+#    Task:
+#    # Remove 20 using remove()
+#    # Try removing 99 using discard()
+#    # Print A
+
+A = {10, 20, 30}
+
+A.remove(20)
+A.discard(99)
+print(A)
+
+# 7. Given:
+#       nums = {1, 2, 3, 4, 5}
+#    Task:
+#    # Remove one arbitrary element using pop()
+#    # Print the removed element
+#    # Print nums after pop
+
+removed_ = nums.pop()
+print(removed_)
+print(nums)
+
+# 8. Given:
+#       A = {1, 2, 3}
+#       B = {1, 2, 3}
+#       C = {3, 4}
+#    Task:
+#    # Check if A is disjoint with C
+#    # Check if A is disjoint with B
+#    # Print both results
+
+z = A.isdisjoint(C)
+c = A.isdisjoint(B)
+print(z, c)
+
+# 9. Given:
+#       X = {1, 2, 3, 4, 5}
+#    Task:
+#    # Check if X is a superset of {2, 3}
+#    # Check if X is a superset of {2, 6}
+#    # Print both results
+
+print(X.issuperset({2,3}))
+print(X.issuperset({2,6}))
+
+# 10. Create an empty set
+#     Task:
+#     # Add numbers from 1 to 5 one by one
+#     # Print the final set
+
+
+
+# 11. Given:
+#        A = {1, 2, 3}
+#     Task:
+#     # Clear the set
+#     # Print A
+#     # Print the type of A
+
+# 12. Given:
+#        data = [1, 2, 2, 3, 3, 3, 4]
+#     Task:
+#     # Convert data into a set
+#     # Print the set
+
+# 13. Given:
+#        A = {1, 2, 3}
+#        B = {3, 4, 5}
+#     Task:
+#     # Compute union using set method (not operator)
+#     # Compute intersection using set method
+#     # Print both results
+
+# 14. Given:
+#        A = {10, 20, 30, 40}
+#     Task:
+#     # Create a new set B that contains only elements greater than 20
+#     # Print B
+
+# 15. Given:
+#        f = frozenset([1, 2, 3])
+#     Task:
+#     # Print f
+#     # Try adding 4 to f (observe behavior)
