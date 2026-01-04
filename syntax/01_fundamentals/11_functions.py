@@ -92,7 +92,6 @@ def outer():
 square_ = lambda x: x * x
 add_lambda = lambda a, b: a + b
 
-
 # ------------------------------------------------------------
 # Problem 1:
 # Create a function called say_hello that:
@@ -193,7 +192,6 @@ square_num = lambda num_a: num_a * num_a
 def greet_users(names):
         for name in names:
             print(f"Hello, {name}!")
-
 
 # ------------------------------------------------------------
 # Problem 10:
@@ -366,7 +364,6 @@ def unique_elements(lst):
     unique_list = list(unique_set)
     return unique_list
 
-
 # 29. Write a function `multiply_list(lst)` that multiplies all numbers in a list.
 
 def multiply_list(lst):
@@ -398,7 +395,6 @@ def second_largest(lst):
 # 32. Write a function `count_occurrences(lst, x)` that:
 # - takes a list `lst` and a value `x`
 # - returns the number of times `x` appears in the list
-
 
 def count_occurence(lst, x):
     count = 0
@@ -719,3 +715,58 @@ def sum_upto_n_recursive(n):
         return 0
     else:
         return n + sum_upto_n_recursive(n - 1)
+
+# ------------------------------------------------------------
+# 66. Write a function `count_consonants(s)` that:
+# - takes a string `s`
+# - returns the number of consonants
+# - ignore spaces
+# - count only alphabet characters
+# ------------------------------------------------------------
+
+def count_consonants(s):
+    consonant = 0
+    for char in s:
+        if char.lower() not in "aeiou" and char.isalpha():
+            consonant += 1
+    return consonant
+
+# ------------------------------------------------------------
+# 67. Write a function `rotate_list_left(lst, k)` that:
+# - takes a list `lst` and an integer `k`
+# - rotates the list to the left by `k` positions
+# - return the rotated list
+# Example:
+# rotate_list_left([1,2,3,4,5], 2) → [3,4,5,1,2]
+# ------------------------------------------------------------
+
+def rotate_list_left(lst, k):
+    if len(lst) == 0:
+        return lst
+
+    k = k % len(lst)
+    rotated = []
+
+    for i in range(k, len(lst)):
+        rotated.append(lst[i])
+
+    for i in range(k):
+        rotated.append(lst[i])
+
+    return rotated
+
+# ------------------------------------------------------------
+# 68. Write a recursive function `count_digits(n)` that:
+# - takes an integer `n`
+# - returns the number of digits in `n`
+# - do NOT convert the number to string
+# ------------------------------------------------------------
+
+def count_digits(n):
+    if n < 0:
+        n = -n
+
+    if n < 10:
+        return 1
+
+    return 1 + count_digits(n // 10)
