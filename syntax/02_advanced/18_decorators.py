@@ -363,3 +363,79 @@ def timer_decorator(func):
 @timer_decorator
 def compute_sum(n):
     return sum(range(n))
+
+# 14. Create a decorator called `log_decorator` that:
+#     - Prints "Function started"
+#     - Executes the original function
+#     - Prints "Function ended"
+#     - Returns the original function’s result
+
+# Apply it using @ syntax on a function `multiply_nums(x, y)`
+# that returns x * y.
+# Call the function and print the result.
+
+def log_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Function Started")
+        result = func(*args, **kwargs)
+        print("Function Ended")
+        return result
+    return wrapper
+
+@log_decorator
+def multiply_nums(x, y):
+    return x * y
+
+print(multiply_nums(5,6))
+
+# 15. Create a decorator called `double_result_decorator` that:
+#     - Calls the original function
+#     - Doubles the returned value
+#     - Returns the doubled value
+
+# Apply it using @ syntax on a function `get_number()`
+# that returns an integer of your choice.
+# Print the final returned value.
+
+
+def double_result_decorator(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result * 2
+    return wrapper
+
+@double_result_decorator
+def get_number():
+    return 5
+
+print(get_number())
+
+# 16. Create a decorator called `check_positive_decorator` that:
+#     - Accepts a function with one integer argument
+#     - If the argument is negative, print "Negative value not allowed"
+#       and return None
+#     - Otherwise, call the original function and return its result
+
+# Apply it using @ syntax on a function `square_num(n)`
+# that returns n * n.
+# Call the function once with a positive number and once with a negative number.
+
+def check_positive_decorator(func):
+    def wrapper(n):
+        if n < 0:
+            print("Negative value not allowed")
+            return None
+        else:
+            result = func(n)
+            return result
+    return wrapper
+
+@check_positive_decorator
+def square_num(n):
+    return n * n
+
+# Test with positive number
+print(square_num(5))  # Output: 25
+
+# Test with negative number
+print(square_num(-3))  # Output: Negative value not allowed, None

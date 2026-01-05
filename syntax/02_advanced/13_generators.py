@@ -217,14 +217,44 @@ print(run.send(4))
 # without storing them all in memory, e.g., generating temporary passwords,
 # processing large log files, or streaming data.
 
+# ===============================
+# PYTHON GENERATORS — TEST (CONTINUED)
+# ===============================
 
+# Q11.
+# Write a generator function named countdown(n)
+# It should yield numbers from n down to 1.
+# Example:
+# for x in countdown(3) → 3 2 1
 
+def countdown(n):
+    for num in range(n, 0, -1):
+        yield num
 
+cntdwn = countdown(3)
+print(next(cntdwn))
+print(next(cntdwn))
+print(next(cntdwn))
 
+# Q12.
+# What will be the output of the following code?
+# Write the exact output in comments.
 
+def demo_gen():
+    yield "A"
+    yield "B"
 
+g = demo_gen()
+print(next(g))
+print(next(g))
 
+# A
+# B
 
+# Q13.
+# Write a generator expression that generates the cubes of numbers
+# from 1 to 4 (inclusive), and print them using a loop.
 
+# write your code here
 
-
+(x ** 3 for x in range(1, 5))
