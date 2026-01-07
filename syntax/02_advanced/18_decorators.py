@@ -439,3 +439,90 @@ print(square_num(5))  # Output: 25
 
 # Test with negative number
 print(square_num(-3))  # Output: Negative value not allowed, None
+
+# ============================================================
+# DECORATORS TEST 2
+# ============================================================
+
+# Q1: What is a decorator in Python? (one sentence)
+
+# A decorator is a function that takes another function, extends or modifies its behavior, and returns a new 
+# function without changing the original source code.
+
+# Q2: What does the @ symbol do when used above a function?
+
+# @decorator applies the decorator
+# It rewrites the function definition as:
+# f = decorator(f)
+
+# Q3: Write a decorator named `log_call` that prints "called" before executing a function.
+# The decorator must work for any number of arguments.
+
+from functools import wraps
+
+def log_call(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("called")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@log_call
+def add(a, b):
+    return a + b
+    
+# Q4: What happens if a decorator’s wrapper does not return the original function’s return value?
+
+# returns None
+
+# Q5: In stacked decorators, which decorator runs first at runtime — top or bottom?
+
+# bottom
+
+# Q6: Why is functools.wraps important? Name two things it preserves.
+
+# To prevent loss of meta data of original function. __name__, __doc__
+
+# Q7: Write a decorator `times(n)` that executes a function `n` times.
+# Use correct decorator-with-arguments structure.
+
+def repeat(n):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            for _ in range(n):
+                func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@repeat(3)
+def add(a, b):
+    return a + b            
+
+# Q8: Given:
+# @d1
+# @d2
+# def f():
+#     pass
+# Rewrite this WITHOUT using @ syntax.
+
+# f = d1(d2(f))
+
+# Q9: True or False:
+# A decorator can modify a function without changing its source code.
+
+# True
+
+# Q10: Identify the bug (do not fix it):
+
+# def dec(func):
+#     def wrapper():
+#         func()
+#     return wrapper
+#
+# @dec
+# def add(a, b):
+#     return a + b
+
+# wrapper function does'nt handling arguments
