@@ -104,3 +104,76 @@ print("Random: ", r.random())
 print(__name__)
 
 # As this file is executes directly this file variable got assigned __main__
+
+# ============================================================
+# PYTHON MODULES — TEST 2
+# ============================================================
+
+# Q1
+# What is a module in Python? (one sentence)
+
+# A module is a Python file that contains code such as variables, functions, or classes.
+
+# Q2
+# What is the difference between:
+# import math
+# from math import sqrt
+
+# import math keeps names under math namespace
+# from math import sqrt brings sqrt directly into current namespace
+
+# Q3
+# Given:
+# import math as m
+# How do you call the function sqrt?
+
+# m.sqrt(5)                        -- calling the function sqrt
+# This is import using Alias
+
+# Q4
+# What problem does "from module import *" cause?
+# Name any TWO issues.
+
+# Name collision
+# Namespace pollution
+
+# Q5
+# What is the value of __name__ when:
+# 1) a file is run directly
+# 2) a file is imported
+
+# 1) a file is run directly - __name__ == "__main__"
+# 2) a file is imported     - __name__ == module_name
+
+# Q6
+# You have a file helpers.py with a function foo().
+# Write the exact import statement and call to foo().
+
+from helpers import foo
+
+foo()
+
+# Q7
+# True or False:
+# Built-in modules need to be installed using pip.
+
+# False
+
+# Q8
+# What is sys.path used for?
+
+# storing directories Python searches.
+
+# Q9
+# Write ONE real use-case of:
+# if __name__ == "__main__":
+
+# running tests only when the file is executed directly
+
+# Q10
+# Name any FOUR built-in Python modules.
+
+# math
+# sys
+# os
+# random
