@@ -124,3 +124,143 @@ except FileNotFoundError:
     print("File not found")
 finally:
     print("Execution completed")
+
+# ============================================================
+# ERROR HANDLING — TEST 2
+# ============================================================
+
+# Q1
+# What is the difference between an error and an exception in Python?
+# (one sentence)
+
+# An exception is a runtime error that Python detects and can handle,
+# whereas an error is the broader concept of a problem that disrupts program execution.
+
+# Q2
+# What will be printed?
+try:
+    x = 5 / 0
+except ZeroDivisionError:
+    print("A")
+print("B")
+
+# A
+# B
+
+# Q3
+# Which block runs if NO exception occurs?
+# (write the block name only)
+
+# else
+
+# Q4
+# What will be printed?
+try:
+    x = int("10")
+except ValueError:
+    print("X")
+else:
+    print("Y")
+finally:
+    print("Z")
+
+# Y
+# Z
+
+# Q5
+# Fill in the blank to catch BOTH ValueError and TypeError
+try:
+    x = int(None)
+except __________:
+    print("Error caught")
+
+# (ValueError, TypeError)
+
+# Q6
+# True or False:
+# The finally block runs only if an exception occurs.
+
+# False
+
+# Q7
+# What object does `e` represent here?
+try:
+    1 / 0
+except ZeroDivisionError as e:
+    pass
+
+# e is the exception object instance, containing:
+# the error message
+# the exception type instance
+
+# ============================================================
+# GENERIC EXCEPT — TEST 3
+# ============================================================
+
+# Q1
+# True or False:
+# A bare `except:` also catches KeyboardInterrupt.
+
+
+# Q2
+# Which is safer?
+# (write exactly one)
+# a) except:
+# b) except Exception:
+
+
+# Q3
+# Where is generic except allowed?
+# (one phrase)
+
+
+# Q4
+# What is the biggest danger of using generic except in core logic?
+# (one short phrase)
+
+
+# Q5
+# Fill the blank with the BEST practice:
+try:
+    risky()
+except __________:
+    handle_error()
+
+# ============================================================
+# ERROR HANDLING — TEST 4 (RAISE)
+# ============================================================
+
+# Q1
+# What does `raise` do in Python?
+# (one sentence)
+
+
+# Q2
+# What will happen?
+def f():
+    raise ValueError("X")
+
+f()
+print("DONE")
+
+
+# Q3
+# Fill the blank to re-raise the same exception
+try:
+    int("abc")
+except ValueError:
+    __________
+
+
+# Q4
+# True or False:
+# You can raise a string as an exception.
+
+
+# Q5
+# Write a single line to raise a TypeError with message "Wrong type"
+
+
+# Q6
+# What must a custom exception inherit from?
+# (write the class name only)
