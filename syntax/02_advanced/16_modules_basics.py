@@ -5,7 +5,7 @@
 # 1. Importing a built-in module
 
 import math
-print(math.sqrt(25))                    # 5
+print(math.sqrt(25))                   # 5
 
 # 2. Using alias
 import math as m
