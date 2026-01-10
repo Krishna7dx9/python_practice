@@ -201,6 +201,8 @@ except ZeroDivisionError as e:
 # True or False:
 # A bare `except:` also catches KeyboardInterrupt.
 
+# True
+
 
 # Q2
 # Which is safer?
@@ -208,22 +210,28 @@ except ZeroDivisionError as e:
 # a) except:
 # b) except Exception:
 
+# except Exception:
+
 
 # Q3
 # Where is generic except allowed?
 # (one phrase)
+
+# At top-level / application boundaries
 
 
 # Q4
 # What is the biggest danger of using generic except in core logic?
 # (one short phrase)
 
+# Hides bugs
+
 
 # Q5
 # Fill the blank with the BEST practice:
 try:
     risky()
-except __________:
+except Exception:
     handle_error()
 
 # ============================================================
@@ -234,6 +242,8 @@ except __________:
 # What does `raise` do in Python?
 # (one sentence)
 
+# It manually triggers an exception and stops normal execution.
+
 
 # Q2
 # What will happen?
@@ -243,24 +253,33 @@ def f():
 f()
 print("DONE")
 
+# ValueError is raised
+# "DONE" is NOT printed
+
 
 # Q3
 # Fill the blank to re-raise the same exception
 try:
     int("abc")
 except ValueError:
-    __________
+    raise
 
 
 # Q4
 # True or False:
 # You can raise a string as an exception.
 
+# False
+
 
 # Q5
 # Write a single line to raise a TypeError with message "Wrong type"
+
+raise TypeError("Wrong type")
 
 
 # Q6
 # What must a custom exception inherit from?
 # (write the class name only)
+
+# Exception
