@@ -145,7 +145,7 @@ print("Length of title: ", len(book1))           # __len__ called
 # ========================================================
 
 # --------------------------------------------------------
-# Q1. Class & Object Basics
+# Q1. Class & Object Basics 1
 # --------------------------------------------------------
 # Create a class named Car
 # Attributes: brand (str), year (int)
@@ -409,3 +409,56 @@ print(counter1.count)                         # prints 3
 
 counter1.reset()
 print(counter1.count)                         # prints 0
+
+# ============================================================
+# PYTHON OOPS — TEST 2
+# ============================================================
+
+# Q1
+# What is a class in Python? (one sentence)
+# A class is a blueprint that defines the structure and behavior of objects.
+
+# Q2
+# What is an object? (one sentence)
+# An object is an instance of a class that exists in memory.
+
+# Q3
+# What does the __init__ method do?
+# It initializes the object's attributes when a new object is created.
+
+# Q4
+# What is the purpose of self?
+# self refers to the current object and is used to access its attributes and methods.
+
+# Q5
+# What will this code print?
+class A:
+    def __init__(self, x):
+        self.x = x
+
+a1 = A(10)
+a2 = A(20)
+
+print(a1.x, a2.x)
+# Output:
+# 10 20
+
+# Q6
+# Write a class Car with:
+# - attributes: brand, year
+# - method: info() that returns "Brand: <brand>, Year: <year>"
+class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+    def info(self):
+        return f"Brand: {self.brand}, Year: {self.year}"
+
+# Q7
+# Create two Car objects and call info() on both
+c1 = Car("Toyota", 2020)
+c2 = Car("BMW", 2023)
+
+print(c1.info())
+print(c2.info())
