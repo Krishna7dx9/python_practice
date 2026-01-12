@@ -283,3 +283,41 @@ raise TypeError("Wrong type")
 # (write the class name only)
 
 # Exception
+
+# ============================================================
+# ERROR HANDLING — TEST 5 (CUSTOM EXCEPTIONS) - SOLVED
+# ============================================================
+
+# Q1
+# What must every custom exception inherit from?
+# Exception
+
+# Q2
+# True or False:
+# Custom exceptions are mainly used to express business logic errors.
+# True
+
+# Q3
+# Write a custom exception class named InvalidScoreError
+class InvalidScoreError(Exception):
+    pass
+
+# Q4
+# What is the naming rule for exception classes?
+# They should use CapWords convention and typically end with the suffix "Error".
+
+# Q5
+# Why is exception hierarchy useful?
+# It allows catching multiple specific errors using a single parent category.
+
+# Q6
+# True or False:
+# It is good practice to inherit custom exceptions from BaseException.
+# False
+
+# Q7
+# Fill in the blank so all payment-related errors are caught
+try:
+    process_payment()
+except PaymentError:
+    handle_payment_failure()
