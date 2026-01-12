@@ -321,3 +321,36 @@ try:
     process_payment()
 except PaymentError:
     handle_payment_failure()
+
+# ============================================================
+# ERROR HANDLING — TEST 6 (PROPAGATION & CHAINING) - SOLVED
+# ============================================================
+
+# Q1
+# What is exception propagation?
+# The process where an unhandled exception travels up the call stack to the next available handler.
+
+# Q2
+# True or False:
+# An exception automatically moves up the call stack if not caught.
+# True
+
+# Q3
+# Fill the blank to preserve the original exception
+try:
+    int("abc")
+except ValueError as e:
+    raise InvalidInputError("Bad input") from e
+
+# Q4
+# What is the main purpose of exception chaining?
+# To provide debugging context by linking a new error to its original cause.
+
+# Q5
+# True or False:
+# You should catch exceptions as early as possible.
+# False
+
+# Q6
+# Where is a generic `except Exception:` allowed?
+# At the top-level entry point of an application.
