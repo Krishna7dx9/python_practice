@@ -282,5 +282,8 @@ def linear_search_exists(arr, target):
 # For an empty list, what should each function return?
 # Explain as comments.
 
-# for empty list each function should and will return -1 as this is the return type expected and
-# this is not a valid index, which means target not exist.
+# For an empty list:
+# - linear_search_first  → -1
+# - linear_search_last   → -1
+# - linear_search_count  → 0
+# - linear_search_exists → False
