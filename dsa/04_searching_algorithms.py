@@ -222,3 +222,65 @@ def binary_search_last(arr, target):
 # ============================================================
 # END OF SEARCHING ALGORITHMS NOTES
 # ============================================================
+
+# ====================================================
+# LINEAR SEARCH — TEST
+# ====================================================
+
+# Q1
+# Implement linear search that returns the index of the
+# FIRST occurrence of target, else -1.
+
+def linear_search_first(arr, target):
+    for x in range(len(arr)):
+        if arr[x] == target:
+            return x
+    return -1
+
+# Q2
+# Implement linear search that returns the index of the
+# LAST occurrence of target, else -1.
+
+def linear_search_last(arr, target):
+    last = -1
+    for x in range(len(arr)):
+        if arr[x] == target:
+            last = x
+    return last 
+
+# Q3
+# Count how many times target appears in the list.
+
+def linear_search_count(arr, target):
+    count = 0
+    for x in range(len(arr)):
+        if arr[x] == target:
+            count += 1
+    return count
+
+
+# Q4
+# Return True if target exists, False otherwise
+# WITHOUT using `in`, `count`, or `index`.
+
+def linear_search_exists(arr, target):
+    for x in arr:
+        if x == target:
+            return True
+    return False
+
+# Q5
+# What is the time complexity of each function above?
+# Write answers as comments.
+
+# Q1 - linear 
+# Q2 - Linear
+# Q3 - Linear
+# Q4 - Linear
+
+# Q6
+# For an empty list, what should each function return?
+# Explain as comments.
+
+# for empty list each function should and will return -1 as this is the return type expected and
+# this is not a valid index, which means target not exist.
