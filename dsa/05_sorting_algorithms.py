@@ -236,3 +236,205 @@ def heap_sort(arr):
 # Timsort     → Python default, stable, adaptive
 # ============================================================
 
+# ============================================================
+# SORTING ALGORITHMS — TEST 
+# ============================================================
+# NOTE:
+# - This file contains BOTH questions and solutions
+# - Use this to VERIFY understanding
+# - Next test will NOT be pre-solved
+# ============================================================
+
+
+# ============================================================
+# Q1. Bubble Sort
+# ============================================================
+# Implement bubble sort that sorts a list in ascending order.
+
+
+def bubble_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+
+    return arr
+
+
+# Time Complexity:
+# - Best: O(n)
+# - Average/Worst: O(n^2)
+# Space Complexity:
+# - O(1)
+
+
+# ============================================================
+# Q2. Selection Sort
+# ============================================================
+# Implement selection sort.
+
+
+def selection_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+    return arr
+
+
+# Time Complexity:
+# - Always O(n^2)
+# Space Complexity:
+# - O(1)
+
+
+# ============================================================
+# Q3. Insertion Sort
+# ============================================================
+# Implement insertion sort.
+
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        arr[j + 1] = key
+
+    return arr
+
+
+# Time Complexity:
+# - Best: O(n)
+# - Worst/Average: O(n^2)
+# Space Complexity:
+# - O(1)
+
+
+# ============================================================
+# Q4. Merge Sort
+# ============================================================
+# Implement merge sort using recursion.
+
+
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    return merge(left, right)
+
+
+def merge(left, right):
+    result = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+
+# Time Complexity:
+# - O(n log n)
+# Space Complexity:
+# - O(n)
+
+
+# ============================================================
+# Q5. Quick Sort
+# ============================================================
+# Implement quick sort (not in-place).
+
+
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    pivot = arr[len(arr) // 2]
+
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+
+    return quick_sort(left) + middle + quick_sort(right)
+
+
+# Time Complexity:
+# - Average: O(n log n)
+# - Worst: O(n^2)
+# Space Complexity:
+# - O(n)
+
+
+# ============================================================
+# Q6. Heap Sort
+# ============================================================
+# Implement heap sort using heapq.
+
+
+def heap_sort(arr):
+    import heapq
+
+    heap = []
+    for x in arr:
+        heapq.heappush(heap, x)
+
+    result = []
+    while heap:
+        result.append(heapq.heappop(heap))
+
+    return result
+
+
+# Time Complexity:
+# - O(n log n)
+# Space Complexity:
+# - O(n)
+
+
+# ============================================================
+# Q7. Concept Questions (ANSWERS)
+# ============================================================
+
+# Q: Which sorting algorithms are stable?
+# A: Bubble Sort, Insertion Sort, Merge Sort, Timsort
+
+# Q: Which sorting algorithm is fastest on average?
+# A: Quick Sort
+
+# Q: Which sorting algorithm does Python use internally?
+# A: Timsort
+
+# Q: Best sorting algorithm for nearly sorted data?
+# A: Insertion Sort / Timsort
+
+# ============================================================
+# END TEST
+# ============================================================
