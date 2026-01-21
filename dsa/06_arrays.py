@@ -130,29 +130,61 @@ sub = arr[1:4]     # [2, 3, 4]
 # - Most problems require full traversal → O(n)
 
 # ============================================================
-# PYTHON ARRAYS — TEST 1 (NO HELP)
+# PYTHON ARRAYS — TEST 1
 # ============================================================
 
 # Q1
 # Create an array of the first 5 natural numbers.
 # Then update the 3rd element to 100.
 
+nums = [1, 2, 3, 4, 5]
+nums[2] = 100
+
 # Q2
 # Given arr = [10, 20, 30, 40, 50]
 # Print all elements using an INDEX-based loop only.
+
+arr = [10, 20, 30, 40, 50]
+
+for x in range(len(arr)):
+    print(arr[x])
 
 # Q3
 # Write a function that returns the last element of an array.
 # If the array is empty, return None.
 
+def last(arr):
+    if not arr:
+        return None
+    else:
+        return arr[-1]
+
+hey = last(arr)
+print(hey)
+
 # Q4
 # Write a function that counts how many times a given target
 # appears in an array WITHOUT using count().
+
+def counts(arr, target):
+    count = 0
+    for x in arr:
+        if x == target:
+            count += 1
+    return count
+
+lets_count = counts(arr, 2)
+print(lets_count)
 
 # Q5
 # Given arr = [1, 2, 3, 4, 5]
 # Remove the element at index 2.
 # Print the array after removal.
+
+arr = [1, 2, 3, 4, 5]
+
+arr.pop(2)
+print(arr)
 
 # Q6
 # What is the time complexity of:
@@ -161,6 +193,68 @@ sub = arr[1:4]     # [2, 3, 4]
 # (c) accessing arr[i]
 # Write answers as comments.
 
+# (a) Amortized - O(1)
+# (b) O(n)
+# (c) O(1)
+
 # Q7
 # Write a function that checks whether an array is empty
 # WITHOUT using len().
+
+def check_empty(arr):
+    return not arr
+
+# ====================================================
+# PYTHON ARRAYS — TEST 2 (STRICT)
+# ====================================================
+
+# Q1
+# Write a function that returns the first element of an array.
+# If the array is empty, return None.
+
+def first_element(arr):
+    if not arr:
+        return None
+    else:
+        return arr[0]
+
+# Q2
+# Write a function that returns True if an array is empty,
+# False otherwise. Do NOT use len().
+
+def empty_check(arr):
+    return not arr
+
+# Q3
+# Write a function that counts occurrences of a target element
+# using INDEX-based traversal only.
+
+def count_occurence(arr, target):
+    count = 0
+    for x in range(len(arr)):
+        if arr[x] == target:
+            count += 1
+    return count
+
+# Q4
+# Given arr = [5, 10, 15, 20]
+# Replace every element at an EVEN index with 0.
+# Print the final array.
+
+arr = [5, 10, 15, 20]
+
+for x in range(len(arr)):
+    if x % 2 == 0:
+        arr[x] = 0
+
+print(arr)
+
+# Q5
+# Write the time complexity as comments:
+# (a) Traversing an array
+# (b) Removing element at index 0
+# (c) append() on Python list
+
+# (a) O(n)
+# (b) O(n)
+# (c) Amortised - O(1)
