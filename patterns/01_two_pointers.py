@@ -1,5 +1,5 @@
 # ============================================================
-# ARRAY PROBLEM PATTERNS — TWO POINTERS
+# PROBLEM PATTERNS — TWO POINTERS
 # ONE CODE FILE (DSA / INTERVIEW READY)
 # ============================================================
 
@@ -25,6 +25,9 @@
 # Pointers start at both ends and move inward.
 
 # Example: Reverse array in-place
+from typing import Any
+
+
 arr_example = [1, 2, 3, 4]
 
 l = 0
@@ -60,18 +63,16 @@ for fast in range(len(arr_example)):
 # - Index-based logic is mandatory
 # - Sorted array + pair problem = two pointers
 
-"""
-============================================================
-ARRAY PROBLEM PATTERNS — TWO POINTERS
-Leetcode (PYTHON)
-============================================================
-"""
+# ============================================================
+# ARRAY PROBLEM PATTERNS — TWO POINTERS
+# Leetcode (PYTHON)
+# ============================================================
 
 # ============================================================
 # Pattern: Two Pointers
 # ============================================================
 
-# Problem: Move Zeroes
+# Problem: 283. Move Zeroes
 # LeetCode: https://leetcode.com/problems/move-zeroes/
 # Key Insight / Pattern Notes: Two Pointers (Fast/Slow)
 # Difficulty: Easy
@@ -96,6 +97,38 @@ if __name__ == "__main__":
     nums = [0,1,0,3,12]
     Solution().moveZeroes(nums)
     print(nums)  # Expected: [1,3,12,0,0]
+
+# ============================================================
+# Pattern: Two Pointers
+# ============================================================
+
+# Problem: 344. Reverse String
+# LeetCode: https://leetcode.com/problems/reverse-string/
+# Key Insight / Pattern Notes: Two Pointers (left, right)
+# Difficulty: Easy
+# ------------------------------------------------------------
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+# Notes / Observations: 
+# ============================================================
+
+class Solution_(object):
+    def reverseString(self, s):
+        left = 0
+        right = len(s) - 1
+        while not left >= right:
+            x = s[left]
+            s[left] = s[right]
+            s[right] = x
+            left += 1
+            right -= 1
+        
+# Example Usage / Test Case
+if __name__ == "__main__":
+    s = "Hello"
+    s = list(s)
+    Solution_().reverseString(s)
+    print(s)  # Expected: ["o", "l", "l", "e", "H"]
 
 """
 ============================================================
